@@ -1,7 +1,29 @@
 {
-  "name": "nextjs_tailwind_shadcn_ts",
-  "version": "0.2.0",
-  "private": true,
+  "name": "neo-brutalist-portfolio",
+  "version": "1.0.0",
+  "description": "Neo-Brutalist WebGPU Portfolio for Mark Anthony Tantongco - A living digital organism with particle intelligence",
+  "author": {
+    "name": "Mark Anthony Tantongco",
+    "email": "hello@markanthony.dev",
+    "url": "https://markanthony.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/neo-brutalist-portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "neo-brutalist",
+    "webgpu",
+    "next.js",
+    "three.js",
+    "react-three-fiber",
+    "gsap",
+    "typescript",
+    "tailwindcss"
+  ],
+  "private": false,
   "scripts": {
     "dev": "next dev -p 3000 2>&1 | tee dev.log",
     "build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",

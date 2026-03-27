@@ -236,3 +236,117 @@ Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allow
  GET / 200 in 69ms (compile: 3ms, render: 66ms)
  GET / 200 in 58ms (compile: 3ms, render: 56ms)
  GET / 200 in 55ms (compile: 1968µs, render: 53ms)
+==========================================
+[2026-03-27 02:15:46] Starting: bun install
+==========================================
+[BUN] Installing dependencies...
+[0.10ms] ".env"
+bun install v1.3.10 (30e609e0)
+
++ prisma@6.19.2
+
+43 packages installed [840.00ms]
+==========================================
+[2026-03-27 02:15:47] Completed: bun install
+[LOG] Step: bun install | Duration: 1s
+==========================================
+
+==========================================
+[2026-03-27 02:15:47] Starting: bun run db:push
+==========================================
+[BUN] Setting up database...
+$ prisma db push
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": SQLite database "custom.db" at "file:/home/z/my-project/db/custom.db"
+
+The database is already in sync with the Prisma schema.
+
+Running generate... (Use --skip-generate to skip the generators)
+[2K[1A[2K[GRunning generate... - Prisma Client
+[2K[1A[2K[G✔ Generated Prisma Client (v6.19.2) to ./node_modules/@prisma/client in 102ms
+
+==========================================
+[2026-03-27 02:15:49] Completed: bun run db:push
+[LOG] Step: bun run db:push | Duration: 2s
+==========================================
+
+==========================================
+[2026-03-27 02:15:49] Starting: Starting Next.js dev server
+==========================================
+[BUN] Starting development server...
+==========================================
+$ next dev -p 3000 2>&1 | tee dev.log
+[2026-03-27 02:15:49] Completed: Starting Next.js dev server
+[LOG] Step: Starting Next.js dev server | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-27 02:15:49] Starting: Waiting for Next.js dev server
+==========================================
+Waiting for Next.js dev server to be ready on localhost:3000...
+Attempt 1/60: Next.js dev server not ready yet, waiting...
+▲ Next.js 16.1.3 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://21.0.11.106:3000
+- Environments: .env
+
+✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+✓ Ready in 1135ms
+○ Compiling / ...
+Attempt 2/60: Next.js dev server not ready yet, waiting...
+ GET / 200 in 1654ms (compile: 1122ms, render: 532ms)
+ GET / 200 in 69ms (compile: 4ms, render: 65ms)
+Next.js dev server is ready!
+==========================================
+[2026-03-27 02:15:56] Completed: Waiting for Next.js dev server
+[LOG] Step: Waiting for Next.js dev server | Duration: 7s
+==========================================
+
+==========================================
+[2026-03-27 02:15:56] Starting: Health check
+==========================================
+[BUN] Performing health check...
+ GET / 200 in 69ms (compile: 5ms, render: 65ms)
+[BUN] Health check passed
+ GET / 200 in 79ms (compile: 4ms, render: 76ms)
+ GET / 200 in 5.3s (compile: 4.6s, render: 688ms)
+==========================================
+[2026-03-27 02:15:56] Completed: Health check
+[LOG] Step: Health check | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-27 02:15:56] Starting: Starting mini-services
+==========================================
+Found mini-services directory, scanning for sub-services...
+Mini-services startup completed. Started 0 service(s).
+==========================================
+[2026-03-27 02:15:56] Completed: Starting mini-services
+[LOG] Step: Starting mini-services | Duration: 0s
+==========================================
+
+Next.js dev server is running in background (PID: 554).
+Use 'kill 554' to stop it.
+ GET / 200 in 75ms (compile: 4ms, render: 71ms)
+ GET / 200 in 70ms (compile: 4ms, render: 66ms)
+ GET / 200 in 63ms (compile: 3ms, render: 60ms)
+ GET / 200 in 63ms (compile: 2ms, render: 61ms)
+ GET / 200 in 72ms (compile: 3ms, render: 69ms)
+ GET / 200 in 54ms (compile: 2ms, render: 52ms)
+ GET / 200 in 68ms (compile: 1902µs, render: 66ms)
+ GET / 200 in 66ms (compile: 2ms, render: 64ms)
+ GET / 200 in 43ms (compile: 1929µs, render: 41ms)
+ GET / 200 in 44ms (compile: 1994µs, render: 42ms)
+ GET / 200 in 55ms (compile: 1700µs, render: 53ms)
+ GET / 200 in 61ms (compile: 2ms, render: 58ms)
+ GET / 200 in 49ms (compile: 3ms, render: 46ms)
+ GET / 200 in 64ms (compile: 11ms, render: 53ms)
+ GET / 200 in 44ms (compile: 2ms, render: 42ms)
+ GET / 200 in 46ms (compile: 1910µs, render: 44ms)
+ GET / 200 in 47ms (compile: 2ms, render: 45ms)
