@@ -2,11 +2,22 @@
 
 > **A living digital organism with particle swarm intelligence**
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-FFEA00?style=flat-square&logo=vercel&logoColor=black)](https://neobrutalist-mark-portfolio.vercel.app)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
 ![Three.js](https://img.shields.io/badge/Three.js-0.183-black?style=flat-square&logo=three.js)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
+
+---
+
+## 🔗 Quick Links
+
+| Environment | URL |
+|-------------|-----|
+| **🚀 Production** | [neobrutalist-mark-portfolio.vercel.app](https://neobrutalist-mark-portfolio.vercel.app) |
+| **🔍 Preview** | [neobrutalist-mark-portfolio-git-main-marktantongco.vercel.app](https://neobrutalist-mark-portfolio-git-main-marktantongco.vercel.app) |
+| **📦 GitHub** | [github.com/marktantongco/neo-brutalist-portfolio](https://github.com/marktantongco/neo-brutalist-portfolio) |
 
 ---
 
@@ -35,37 +46,49 @@ This is a **Neo-Brutalist portfolio** for **Mark Anthony Tantongco** that pushes
 
 ### 🖥️ Technical Features
 
-- **Particle Swarm Intelligence**
-  - 3000+ particles simulating WebGPU subgroup operations
-  - Workgroup-based clustering (64-thread tiles)
-  - Elected leaders control data flows
-  - ShuffleXor for organic distribution
+#### 🌀 Particle Swarm Intelligence
+- 3000+ particles simulating WebGPU subgroup operations
+- Workgroup-based clustering (64-thread tiles)
+- Elected leaders control data flows
+- ShuffleXor for organic distribution
+- Mouse-reactive particle attraction
 
-- **3D Scene (React Three Fiber)**
-  - Real-time particle rendering with bloom effects
-  - Floating geometric shapes (cube, octahedron, torus, icosahedron)
-  - Dynamic grid lines
-  - Post-processing with EffectComposer
+#### 🎮 3D Scene (React Three Fiber)
+- Real-time particle rendering with bloom effects
+- Floating geometric shapes (cube, octahedron, torus, icosahedron)
+- Dynamic grid lines
+- Post-processing with EffectComposer
+- Adaptive quality for performance
 
-- **GSAP Animations**
-  - Magnetic button attraction
-  - Scroll-triggered reveals
-  - Glitch text effects on hover
-  - Staggered grid animations
-  - Hero entrance sequences
+#### 🎬 GSAP Animations
+- Magnetic button attraction with elastic snap
+- Scroll-triggered reveals (fade, slide, brutal)
+- Glitch text effects on hover
+- Staggered grid animations
+- Hero entrance sequences with timeline
+- Counter animations with scroll trigger
 
-- **Interactive Elements**
-  - Custom electric cursor with magnetic attraction
-  - Command palette (Ctrl+K)
-  - Floating action buttons (back-to-top, contact, GitHub)
-  - Project modals with detailed views
-  - Contact form with validation and confetti celebration
+#### 🖱️ Interactive Elements
+- Custom electric cursor with magnetic attraction
+- Command palette (Ctrl+K) for quick navigation
+- Floating action buttons (back-to-top, contact, GitHub)
+- Project modals with detailed views
+- Contact form with validation and confetti celebration
+- Newsletter signup with email validation
 
-- **Accessibility**
-  - Skip links for keyboard navigation
-  - Reduced motion support
-  - ARIA labels and semantic HTML
-  - Screen reader friendly
+#### 📺 Visual Effects
+- VHS overlay (scan lines, noise)
+- Scroll progress indicator
+- Infinite marquee ticker
+- Glitch text on name hover
+- Particle connections visualization
+
+#### ♿ Accessibility
+- Skip links for keyboard navigation
+- Reduced motion support
+- ARIA labels and semantic HTML
+- Screen reader friendly
+- Keyboard navigation for all interactive elements
 
 ---
 
@@ -75,27 +98,29 @@ This is a **Neo-Brutalist portfolio** for **Mark Anthony Tantongco** that pushes
 neo-brutalist-portfolio/
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx          # Main portfolio page
-│   │   ├── layout.tsx        # Root layout
-│   │   └── globals.css       # Global styles + brutalist classes
+│   │   ├── page.tsx              # Main portfolio page
+│   │   ├── layout.tsx            # Root layout
+│   │   └── globals.css           # Global styles + brutalist classes
 │   ├── components/
-│   │   └── brutal/
-│   │       ├── cursor.tsx    # Electric cursor, glitch text, typewriter
-│   │       ├── scroll.tsx    # ScrollReveal, Counter, StaggerGrid
-│   │       ├── sections.tsx  # Timeline, Testimonials, Performance
-│   │       ├── effects.tsx   # ScrollProgress, VHS, Marquee, FloatingActions
-│   │       ├── contact.tsx   # Contact form with validation
-│   │       ├── showcase.tsx  # Code showcase, particle connections
-│   │       ├── carousel.tsx  # Section dividers
-│   │       ├── advanced.tsx  # CommandPalette, Confetti, Newsletter
-│   │       └── project-modal.tsx  # Project detail modals
+│   │   ├── brutal/
+│   │   │   ├── cursor.tsx        # Electric cursor, glitch text, typewriter
+│   │   │   ├── scroll.tsx        # ScrollReveal, Counter, StaggerGrid
+│   │   │   ├── sections.tsx      # Timeline, Testimonials, Performance
+│   │   │   ├── effects.tsx       # ScrollProgress, VHS, Marquee, FloatingActions
+│   │   │   ├── contact.tsx       # Contact form with validation
+│   │   │   ├── showcase.tsx      # Code showcase, particle connections
+│   │   │   ├── carousel.tsx      # Section dividers
+│   │   │   ├── advanced.tsx      # CommandPalette, Confetti, Newsletter
+│   │   │   └── project-modal.tsx # Project detail modals
+│   │   └── ui/                   # shadcn/ui components
 │   └── hooks/
-│       └── useScrollAnimation.ts  # Custom scroll animation hooks
+│       └── useScrollAnimation.ts # Custom scroll animation hooks
 ├── prisma/
-│   └── schema.prisma         # Database schema (if needed)
-├── public/                   # Static assets
+│   └── schema.prisma             # Database schema
+├── public/                       # Static assets
 ├── package.json
 ├── tailwind.config.ts
+├── vercel.json                   # Vercel deployment config
 └── README.md
 ```
 
@@ -222,21 +247,45 @@ const projects: Project[] = [
 ];
 ```
 
+### Customizing Skills
+
+Edit the skill bars in the Skills section:
+
+```tsx
+<SkillBar name="TypeScript / JavaScript" level={95} delay={0} />
+<SkillBar name="React / Next.js" level={92} delay={0.1} />
+```
+
 ---
 
-## 🖼️ Screenshots
+## 🖼️ Sections
 
 ### Hero Section
-The hero features a full-screen 3D particle swarm with floating geometric shapes and a typewriter effect.
+Full-screen 3D particle swarm with floating geometric shapes and typewriter effect for dynamic taglines.
+
+### Performance Dashboard
+Real-time metrics display showing particle count, frame rate, and system stats.
 
 ### Projects Grid
-Project cards with brutalist styling, magnetic hover effects, and detailed modal views.
-
-### Skills Section
-Animated skill bars with GSAP and icon grid showcasing capabilities.
+Project cards with brutalist styling, magnetic hover effects, and detailed modal views featuring stats and features.
 
 ### Crypto Vault
-Real-time volatility tracker simulating WebGPU subgroup operations.
+Real-time volatility tracker simulating WebGPU subgroup operations with live price updates.
+
+### Timeline
+Career timeline with scroll-triggered animations and milestone highlights.
+
+### Testimonials
+Client testimonials carousel with brutalist card styling.
+
+### Skills Section
+Animated skill bars with GSAP and icon grid showcasing capabilities across Frontend, Backend, Compute, and Security.
+
+### Contact Form
+Validated contact form with shake animation on errors and confetti celebration on success.
+
+### Newsletter Signup
+Email subscription form with validation and success feedback.
 
 ---
 
@@ -256,6 +305,7 @@ Real-time volatility tracker simulating WebGPU subgroup operations.
 - Breakpoints: `sm:640px`, `md:768px`, `lg:1024px`, `xl:1280px`
 - Touch-friendly interactions
 - Adaptive particle count for performance
+- Responsive navigation with hamburger menu on mobile
 
 ---
 
@@ -265,12 +315,16 @@ Real-time volatility tracker simulating WebGPU subgroup operations.
 - **Core Web Vitals**: Optimized
 - **Bundle Size**: Tree-shaken
 - **3D Performance**: Adaptive quality
+- **Image Optimization**: Next.js Image component
+- **Font Loading**: Optimized with next/font
 
 ---
 
 ## 📦 Deployment
 
 ### Vercel (Recommended)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/marktantongco/neo-brutalist-portfolio)
 
 ```bash
 # Install Vercel CLI
@@ -280,7 +334,7 @@ npm i -g vercel
 vercel
 ```
 
-Or connect your GitHub repository to Vercel for automatic deployments.
+Or connect your GitHub repository to Vercel for automatic deployments on push.
 
 ### Docker
 
@@ -311,6 +365,8 @@ CMD ["bun", "server.js"]
 
 ## 🤝 Contributing
 
+Contributions are welcome! Please feel free to submit a Pull Request.
+
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
 3. Commit changes: `git commit -m 'Add amazing feature'`
@@ -331,6 +387,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 - **GSAP** for professional animation tools
 - **shadcn/ui** for beautiful component patterns
 - **Vercel** for seamless deployment
+- **React Three Fiber** team for amazing 3D React integration
 
 ---
 
@@ -338,10 +395,10 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 **Mark Anthony Tantongco**
 
-- 🌐 Website: [neo-brutalist-portfolio.vercel.app](https://neo-brutalist-portfolio.vercel.app)
+- 🌐 Portfolio: [neobrutalist-mark-portfolio.vercel.app](https://neobrutalist-mark-portfolio.vercel.app)
 - 📧 Email: hello@markanthony.dev
-- 💼 LinkedIn: [linkedin.com/in/markanthony](https://linkedin.com)
-- 🐙 GitHub: [github.com/marktantongco](https://github.com)
+- 💼 LinkedIn: [linkedin.com/in/markanthony](https://linkedin.com/in/markanthony)
+- 🐙 GitHub: [github.com/marktantongco](https://github.com/marktantongco)
 
 ---
 
@@ -352,5 +409,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ---
 
 *Forged with raw power. Zero corporate polish.*
+
+**⚡ Built with Next.js • Three.js • GSAP • TypeScript ⚡**
 
 </div>
