@@ -4,7 +4,6 @@
   "buildCommand": "bun run build",
   "installCommand": "bun install",
   "devCommand": "bun run dev",
-  "regions": ["sfo1", "iad1"],
   "functions": {
     "src/app/api/**": {
       "memory": 1024,
