@@ -112,7 +112,7 @@ neo-brutalist-portfolio/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/neo-brutalist-portfolio.git
+git clone https://github.com/marktantongco/neo-brutalist-portfolio.git
 cd neo-brutalist-portfolio
 
 # Install dependencies
