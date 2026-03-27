@@ -338,10 +338,10 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 **Mark Anthony Tantongco**
 
-- 🌐 Website: [markanthony.dev](https://markanthony.dev)
+- 🌐 Website: [neo-brutalist-portfolio.vercel.app](https://neo-brutalist-portfolio.vercel.app)
 - 📧 Email: hello@markanthony.dev
 - 💼 LinkedIn: [linkedin.com/in/markanthony](https://linkedin.com)
-- 🐙 GitHub: [github.com/markanthony](https://github.com)
+- 🐙 GitHub: [github.com/marktantongco](https://github.com)
 
 ---
 
