@@ -1,0 +1,619 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NEO-BRUTALIST DESIGN SYSTEM — RAW, HONEST, DANGEROUS
+   Electric Yellow #FFEA00 on Void Black #000000
+   4px borders, 8px hard shadows, MONUMENTAL scale
+═══════════════════════════════════════════════════════════════════════════ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NEO-BRUTALIST TOKENS — THE CONCRETE FOUNDATION
+═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  --radius: 0;
+  
+  /* VOID BLACK — The abyss that swallows light */
+  --void-black: #000000;
+  --void-deep: #0a0a0a;
+  --void-surface: #111111;
+  
+  /* ELECTRIC YELLOW — The predator's gaze */
+  --electric-yellow: #FFEA00;
+  --electric-bright: #FFF500;
+  --electric-dim: #D4C000;
+  
+  /* BRUTALIST ACCENTS */
+  --concrete: #1a1a1a;
+  --rebar: #333333;
+  --rust: #CC4400;
+  --toxic-green: #00FF66;
+  --blood-red: #FF0033;
+  
+  /* SEMANTIC TOKENS */
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --card: #0a0a0a;
+  --card-foreground: #FFFFFF;
+  --popover: #0a0a0a;
+  --popover-foreground: #FFFFFF;
+  --primary: #FFEA00;
+  --primary-foreground: #000000;
+  --secondary: #111111;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1a1a1a;
+  --muted-foreground: #888888;
+  --accent: #FFEA00;
+  --accent-foreground: #000000;
+  --destructive: #FF0033;
+  --border: #FFEA00;
+  --input: #111111;
+  --ring: #FFEA00;
+  
+  /* CHART TOKENS — Raw data visualization */
+  --chart-1: #FFEA00;
+  --chart-2: #00FF66;
+  --chart-3: #FF0033;
+  --chart-4: #CC4400;
+  --chart-5: #FFFFFF;
+  
+  /* SIDEBAR — Nested void */
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #FFEA00;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #111111;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #FFEA00;
+  --sidebar-ring: #FFEA00;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --card: #0a0a0a;
+  --card-foreground: #FFFFFF;
+  --popover: #0a0a0a;
+  --popover-foreground: #FFFFFF;
+  --primary: #FFEA00;
+  --primary-foreground: #000000;
+  --secondary: #111111;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1a1a1a;
+  --muted-foreground: #888888;
+  --accent: #FFEA00;
+  --accent-foreground: #000000;
+  --destructive: #FF0033;
+  --border: #FFEA00;
+  --input: #111111;
+  --ring: #FFEA00;
+  --chart-1: #FFEA00;
+  --chart-2: #00FF66;
+  --chart-3: #FF0033;
+  --chart-4: #CC4400;
+  --chart-5: #FFFFFF;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #FFEA00;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #111111;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #FFEA00;
+  --sidebar-ring: #FFEA00;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BRUTALIST FOUNDATION — EXPOSED STRUCTURE
+═══════════════════════════════════════════════════════════════════════════ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+  
+  ::selection {
+    background-color: #FFEA00;
+    color: #000000;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BRUTALIST TYPOGRAPHY — MONUMENTAL SCALE
+═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .brutalist-heading {
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+    text-transform: uppercase;
+  }
+  
+  .brutalist-mono {
+    font-family: var(--font-geist-mono), monospace;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  
+  /* MONUMENTAL — For hero headlines */
+  .text-monumental {
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 900;
+    letter-spacing: -0.08em;
+    line-height: 0.85;
+    text-transform: uppercase;
+  }
+  
+  /* MEGA — For section titles */
+  .text-mega {
+    font-size: clamp(2rem, 8vw, 6rem);
+    font-weight: 900;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+    text-transform: uppercase;
+  }
+  
+  /* HUGE — For card titles */
+  .text-huge {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  
+  /* CODE BRUTAL — For technical elements */
+  .text-brutal-code {
+    font-family: var(--font-geist-mono), monospace;
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BRUTALIST ELEMENTS — CONCRETE & REBAR
+═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  /* BRUTALIST CARD — The monolith */
+  .brutal-card {
+    background-color: #0a0a0a;
+    border: 4px solid #FFEA00;
+    box-shadow: 8px 8px 0 #FFEA00;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  
+  .brutal-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 #FFEA00;
+  }
+  
+  /* BRUTALIST BUTTON — Predatory */
+  .brutal-btn {
+    background-color: #FFEA00;
+    color: #000000;
+    border: 4px solid #000000;
+    box-shadow: 6px 6px 0 #000000;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    cursor: pointer;
+  }
+  
+  .brutal-btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 #000000;
+  }
+  
+  .brutal-btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 #000000;
+  }
+  
+  /* BRUTALIST BUTTON OUTLINE */
+  .brutal-btn-outline {
+    background-color: transparent;
+    color: #FFEA00;
+    border: 4px solid #FFEA00;
+    box-shadow: 6px 6px 0 #FFEA00;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+    cursor: pointer;
+  }
+  
+  .brutal-btn-outline:hover {
+    background-color: #FFEA00;
+    color: #000000;
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 #FFEA00;
+  }
+  
+  .brutal-btn-outline:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 #FFEA00;
+  }
+  
+  /* BRUTALIST TAG — Raw labels */
+  .brutal-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background-color: #FFEA00;
+    color: #000000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px solid #000000;
+  }
+  
+  /* BRUTALIST DIVIDER — Exposed rebar */
+  .brutal-divider {
+    height: 4px;
+    background-color: #FFEA00;
+    width: 100%;
+  }
+  
+  /* BRUTALIST GLOW — Electric pulse */
+  .brutal-glow {
+    text-shadow: 0 0 20px rgba(255, 234, 0, 0.5),
+                 0 0 40px rgba(255, 234, 0, 0.3),
+                 0 0 60px rgba(255, 234, 0, 0.2);
+  }
+  
+  /* BRUTALIST STRIPES — Warning pattern */
+  .brutal-stripes {
+    background: repeating-linear-gradient(
+      -45deg,
+      #FFEA00,
+      #FFEA00 10px,
+      #000000 10px,
+      #000000 20px
+    );
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATIONS — SENTIENT MOVEMENT
+═══════════════════════════════════════════════════════════════════════════ */
+@keyframes brutal-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes electric-flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.3; }
+  94% { opacity: 1; }
+  96% { opacity: 0.5; }
+  97% { opacity: 1; }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes magnetic-pull {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.animate-brutal-pulse {
+  animation: brutal-pulse 2s ease-in-out infinite;
+}
+
+.animate-electric-flicker {
+  animation: electric-flicker 3s ease-in-out infinite;
+}
+
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCROLLBAR — RAW METAL
+═══════════════════════════════════════════════════════════════════════════ */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-left: 4px solid #FFEA00;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFEA00;
+  border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFFFFF;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FFEA00 #000000;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NOISE OVERLAY — TEXTURE OF REALITY
+═══════════════════════════════════════════════════════════════════════════ */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE UTILITIES
+═══════════════════════════════════════════════════════════════════════════ */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .brutal-shadow {
+    box-shadow: 8px 8px 0 #FFEA00;
+  }
+  
+  .brutal-shadow-lg {
+    box-shadow: 12px 12px 0 #FFEA00;
+  }
+  
+  .brutal-border {
+    border: 4px solid #FFEA00;
+  }
+  
+  .brutal-border-thin {
+    border: 2px solid #FFEA00;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NEW IDENTITY COMPONENTS — SERVICES, PROCESS, TRUST
+═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  /* Service Cards */
+  .service-card {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 4px solid transparent;
+    transition: border-color 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .service-card:hover::before {
+    border-color: #00FFFF;
+  }
+  
+  /* Trust Badges */
+  .trust-badge {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .trust-badge::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 40%,
+      rgba(255, 234, 0, 0.1) 50%,
+      transparent 60%
+    );
+    transform: rotate(45deg);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+  }
+  
+  .trust-badge:hover::after {
+    transform: rotate(45deg) translate(50%, 50%);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CYAN ACCENT — SECONDARY COLOR SYSTEM
+═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  /* CYAN ACCENT — Electric secondary */
+  --cyan-electric: #00FFFF;
+  --cyan-dim: #00CCCC;
+  --cyan-glow: rgba(0, 255, 255, 0.3);
+  
+  /* NEON GREEN — For special highlights */
+  --neon-green: #CCFF00;
+  --neon-dim: #AACC00;
+}
+
+/* Cyan glow effects */
+.cyan-glow {
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.5),
+               0 0 40px rgba(0, 255, 255, 0.3),
+               0 0 60px rgba(0, 255, 255, 0.2);
+}
+
+.neon-glow {
+  text-shadow: 0 0 20px rgba(204, 255, 0, 0.5),
+               0 0 40px rgba(204, 255, 0, 0.3),
+               0 0 60px rgba(204, 255, 0, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PULSE ANIMATION FOR STATUS BADGES
+═══════════════════════════════════════════════════════════════════════════ */
+@keyframes status-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.animate-status-pulse {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SIDE DOT NAVIGATION STYLES
+═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .side-dot-nav {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .side-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 234, 0, 0.5);
+    background: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .side-dot:hover {
+    border-color: #00FFFF;
+    background: rgba(0, 255, 255, 0.3);
+  }
+  
+  .side-dot.active {
+    background: #FFEA00;
+    border-color: #FFEA00;
+    transform: scale(1.25);
+    box-shadow: 0 0 10px #FFEA00;
+  }
+  
+  .side-dot-label {
+    position: absolute;
+    right: 2rem;
+    padding: 0.25rem 0.75rem;
+    background: #FFEA00;
+    color: #000000;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border: 2px solid #000000;
+    box-shadow: 3px 3px 0 #00FFFF;
+    opacity: 0;
+    transform: translateX(0.5rem);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .side-dot:hover .side-dot-label {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
