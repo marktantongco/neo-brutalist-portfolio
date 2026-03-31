@@ -20,6 +20,7 @@ import { ContactSection } from "@/components/brutal/contact";
 import { CodeShowcase } from "@/components/brutal/showcase";
 import { CommandPalette, Confetti, SkipLink, NewsletterSignup, StatsVisualization, useReducedMotion } from "@/components/brutal/advanced";
 import { SectionDivider } from "@/components/brutal/carousel";
+import { Safe3DScene } from "@/components/brutal/webgl-fallback";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -627,13 +628,32 @@ export default function Portfolio() {
       
       {/* Hero Section */}
       <section ref={heroRef} id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <Safe3DScene mouse={mouseRef}>
           <Suspense fallback={<div className="w-full h-full bg-black" />}>
-            <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+            <Canvas 
+              camera={{ position: [0, 0, 5], fov: 75 }}
+              dpr={[1, 2]}
+              gl={{ 
+                antialias: false,
+                alpha: false,
+                powerPreference: "high-performance",
+                failIfMajorPerformanceCaveat: false,
+              }}
+              onCreated={({ gl }) => {
+                // Additional WebGL context loss handling
+                gl.domElement.addEventListener('webglcontextlost', (e) => {
+                  e.preventDefault();
+                  console.warn('WebGL context lost. Attempting recovery...');
+                });
+                gl.domElement.addEventListener('webglcontextrestored', () => {
+                  console.log('WebGL context restored.');
+                });
+              }}
+            >
               <Scene mouse={mouseRef} />
             </Canvas>
           </Suspense>
-        </div>
+        </Safe3DScene>
         
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
           <div className="mb-6 hero-title">
